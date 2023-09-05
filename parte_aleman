@@ -1,0 +1,132 @@
+def eliminar_cliente():
+    print("Eliminar cliente")
+    opc_folio = int(input("Ingrese el folio del cliente que desea eliminar: "))
+    cliente_encontrado = False
+    for cliente in clientes:
+        if cliente.folio == opc_folio:
+            cliente_encontrado = True
+            print('Nota a eliminar:')
+            cliente.imprimir_info()
+            cliente.servicios_clientes()
+            confirmacion = input('¿Está seguro de que desea eliminar esta nota? (s/n): ')
+            if confirmacion.lower() == 's':
+                clientes.remove(cliente)
+                clientes_eliminados.append(cliente)
+                print("Cliente eliminado")
+                return
+            else:
+                print('La nota no fue cancelada')
+                return
+    if not cliente_encontrado:
+        print("El cliente no existe")
+            
+            
+
+    
+
+
+while True:
+    print('Bienvenido a GeraMotors')
+    print('Elija una opción:')
+    print("[1]. Registrar una nota")
+    print("[2]. Consultas y reportes")
+    print("[3]. Cancelar una nota")
+    print("[4]. Recuperar una nota")
+    print("[5]. Salir del sistema")
+    opcion = int(input('Ingrese la opción que desea realizar: '))
+    if opcion == 1:
+        agregarDatos()
+        
+        
+    elif opcion == 2:
+        print("")
+        print("[1]. Consultas por folio")
+        print("[2]. Consultas por periodo")
+        print("[3]. Salir del sistema")
+        
+        consulYreport = int(input("Metodo de consultas? \n"))
+        if consulYreport==1:
+            consulta()
+        elif consulYreport==2:
+            consultaPorFecha()
+    
+    elif opcion == 3:
+        eliminar_cliente()
+        
+    elif opcion == 4:
+        recuperar_nota()
+        
+    elif opcion==5:
+        confirmacion = input('¿Esta seguro que desea salir del programa? (s/n): ')
+        if confirmacion.lower() == 's':
+            break
+
+def recuperar_nota():
+    print("Recuperar nota")
+    print('Notas eliminadas:')
+    for cliente in clientes_eliminados:
+        cliente.imprimir_info()
+        print('')
+    opc_folio = int(input("Ingresa el folio del cliente eliminado que deseas recuperar o 0 para no seleccionar ninguno: "))
+    if opc_folio == 0:
+        return
+    cliente_encontrado = False
+    for cliente in clientes_eliminados:
+        if cliente.folio == opc_folio:
+            cliente_encontrado = True
+            print('Nota a recuperar:')
+            cliente.imprimir_info()
+            cliente.servicios_clientes()
+            confirmacion = input('¿Está seguro de que desea recuperar esta nota? (s/n): ')
+            if confirmacion.lower() == 's':
+                clientes.append(cliente)
+                clientes_eliminados.remove(cliente)
+                print("Cliente recuperado")
+                return
+            else:
+                print('Nota no recuperada')
+                return
+    if not cliente_encontrado:
+        print("El cliente no existe")
+        
+
+
+        
+    
+
+
+while True:
+    print('Bienvenido a GeraMotors')
+    print('Elija una opción:')
+    print("[1]. Registrar una nota")
+    print("[2]. Consultas y reportes")
+    print("[3]. Cancelar una nota")
+    print("[4]. Recuperar una nota")
+    print("[5]. Salir del sistema")
+    opcion = int(input('Ingrese la opción que desea realizar: '))
+    if opcion == 1:
+        agregarDatos()
+        
+        
+    elif opcion == 2:
+        print("")
+        print("[1]. Consultas por folio")
+        print("[2]. Consultas por periodo")
+        print("[3]. Salir del sistema")
+        
+        consulYreport = int(input("Metodo de consultas? \n"))
+        if consulYreport==1:
+            consulta()
+        elif consulYreport==2:
+            consultaPorFecha()
+    
+    elif opcion == 3:
+        eliminar_cliente()
+        
+    elif opcion == 4:
+        recuperar_nota()
+        
+    elif opcion==5:
+        confirmacion = input('¿Esta seguro que desea salir del programa? (s/n): ')
+        if confirmacion.lower() == 's':
+            break
