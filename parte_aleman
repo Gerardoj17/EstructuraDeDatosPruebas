@@ -19,48 +19,6 @@ def eliminar_cliente():
                 return
     if not cliente_encontrado:
         print("El cliente no existe")
-            
-            
-
-    
-
-
-while True:
-    print('Bienvenido a GeraMotors')
-    print('Elija una opción:')
-    print("[1]. Registrar una nota")
-    print("[2]. Consultas y reportes")
-    print("[3]. Cancelar una nota")
-    print("[4]. Recuperar una nota")
-    print("[5]. Salir del sistema")
-    opcion = int(input('Ingrese la opción que desea realizar: '))
-    if opcion == 1:
-        agregarDatos()
-        
-        
-    elif opcion == 2:
-        print("")
-        print("[1]. Consultas por folio")
-        print("[2]. Consultas por periodo")
-        print("[3]. Salir del sistema")
-        
-        consulYreport = int(input("Metodo de consultas? \n"))
-        if consulYreport==1:
-            consulta()
-        elif consulYreport==2:
-            consultaPorFecha()
-    
-    elif opcion == 3:
-        eliminar_cliente()
-        
-    elif opcion == 4:
-        recuperar_nota()
-        
-    elif opcion==5:
-        confirmacion = input('¿Esta seguro que desea salir del programa? (s/n): ')
-        if confirmacion.lower() == 's':
-            break
-
 def recuperar_nota():
     print("Recuperar nota")
     print('Notas eliminadas:')
@@ -88,10 +46,9 @@ def recuperar_nota():
                 return
     if not cliente_encontrado:
         print("El cliente no existe")
-        
+            
+            
 
-
-        
     
 
 
@@ -130,3 +87,12 @@ while True:
         confirmacion = input('¿Esta seguro que desea salir del programa? (s/n): ')
         if confirmacion.lower() == 's':
             break
+
+
+        
+
+
+        
+    
+
+
